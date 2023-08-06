@@ -10,7 +10,7 @@ namespace Depra.Stateful.Finite
 	{
 		private readonly bool _allowReentry;
 
-		public event StateChangedDelegate StateChanged;
+		public event IStateMachine<IState>.StateChangedDelegate StateChanged;
 
 		public StateMachine(bool allowReentry = false) =>
 			_allowReentry = allowReentry;

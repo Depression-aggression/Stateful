@@ -3,14 +3,16 @@
 
 namespace Depra.Stateful.Abstract
 {
-    public interface IStateMachine : IStateMachine<IState> { }
+	public interface IStateMachine : IStateMachine<IState> { }
 
-    public interface IStateMachine<TState>
-    {
-        event StateChangedDelegate StateChanged;
+	public interface IStateMachine<TState>
+	{
+		event StateChangedDelegate StateChanged;
 
-        TState CurrentState { get; }
+		TState CurrentState { get; }
 
-        void SwitchState(TState to);
-    }
+		void SwitchState(TState to);
+
+		public delegate void StateChangedDelegate(TState state);
+	}
 }

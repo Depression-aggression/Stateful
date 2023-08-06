@@ -11,7 +11,7 @@ namespace Depra.Stateful.Transitional
 		private readonly IStateMachine _machine;
 		private readonly IStateTransitions _transitions;
 
-		public event StateChangedDelegate StateChanged
+		public event IStateMachine<IState>.StateChangedDelegate StateChanged
 		{
 			add => _machine.StateChanged += value;
 			remove => _machine.StateChanged -= value;
